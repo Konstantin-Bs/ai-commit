@@ -56,3 +56,7 @@ git commit -m "your generated message here"
 1. Reads your staged diff via `git diff --cached`
 2. Sends it to Gemini 2.5 Flash with a prompt to generate a concise commit message
 3. Prints the result
+
+## License
+
+MIT
