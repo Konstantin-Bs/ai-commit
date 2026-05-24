@@ -3,6 +3,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Gemini](https://img.shields.io/badge/Powered%20by-Gemini%202.5%20Flash-4285F4?style=flat-square&logo=google&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
+![npm](https://img.shields.io/npm/v/@konstantin-bs/ai-git-commit?style=flat-square&logo=npm&logoColor=white)
 
 A CLI tool that generates commit messages from your staged changes using Google Gemini AI.
 
