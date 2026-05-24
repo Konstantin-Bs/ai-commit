@@ -1,17 +1,16 @@
 {
   "name": "@konstantin-bs/ai-git-commit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
-    "dotenv": "^17.4.2"
+    "@google/generative-ai": "^0.24.1"
   },
   "bin": {
     "ai-commit": "index.js"
