@@ -22,7 +22,7 @@ feat: add user authentication with JWT and refresh token support
 ## Installation
 
 ```bash
-npm install -g ai-commit
+npm install -g @konstantin-bs/ai-git-commit
 ```
 
 ## Setup

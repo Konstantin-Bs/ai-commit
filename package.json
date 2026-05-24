@@ -1,5 +1,5 @@
 {
-  "name": "ai-git-commit",
+  "name": "@konstantin-bs/ai-git-commit",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
