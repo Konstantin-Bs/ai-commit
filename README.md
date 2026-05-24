@@ -1,4 +1,4 @@
-# ai-commit
+# ai-git-commit
 
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Gemini](https://img.shields.io/badge/Powered%20by-Gemini%202.5%20Flash-4285F4?style=flat-square&logo=google&logoColor=white)
@@ -22,18 +22,15 @@ feat: add user authentication with JWT and refresh token support
 ## Installation
 
 ```bash
-git clone https://github.com/Konstantin-Bs/ai-commit.git
-cd ai-commit
-npm install
-npm link
+npm install -g ai-commit
 ```
 
 ## Setup
 
-Create a `.env` file in the project root:
+Run the init command and paste your Gemini API key when prompted:
 
-```
-GOOGLE_GENERATIVE_AI_API_KEY=your_api_key_here
+```bash
+ai-commit init
 ```
 
 ## Usage
