@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { commit } = require("./src/commit");
-const { init } = require("./src/init");
-const { lang } = require("./src/lang");
+import { commit } from "./src/commit.js";
+import { init } from "./src/init.js";
+import { lang } from "./src/lang.js";
 
 if (process.argv[2] === "init") {
   init();

@@ -1,8 +1,8 @@
-const readline = require("readline");
-const fs = require("fs");
-const os = require("os");
+import readline from "readline";
+import fs from "fs";
+import os from "os";
 
-async function lang() {
+export async function lang() {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -51,5 +51,3 @@ async function lang() {
     },
   );
 }
-
-module.exports = { lang };

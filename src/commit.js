@@ -1,9 +1,10 @@
-const { execSync } = require("child_process");
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-const fs = require("fs");
-const os = require("os");
+import { execSync } from "child_process";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import fs from "fs";
+import os from "os";
+import ora from "ora";
 
-async function commit() {
+export async function commit() {
   const diff = execSync("git diff --cached").toString();
 
   if (!diff) {
@@ -25,6 +26,7 @@ async function commit() {
   }
 
   const genAI = new GoogleGenerativeAI(apiKey);
+  const spinner = ora("Generating commit message...").start();
 
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
@@ -33,11 +35,9 @@ async function commit() {
        The entire message including the conventional commit prefix (feat, fix, etc.) should be in ${lang}.
        No explanation, just the message, no backticks or special formatting:\n\n${diff}`,
     );
-
-    console.log(response.response.text());
+    spinner.succeed(response.response.text());
   } catch (error) {
+    spinner.fail("Something went wrong");
     console.error(error);
   }
 }
-
-module.exports = { commit };
