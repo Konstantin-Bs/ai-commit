@@ -49,6 +49,16 @@ The generated message is printed to the terminal. Copy and use it:
 git commit -m "your generated message here"
 ```
 
+## Language
+
+By default commit messages are generated in English. To change the language:
+
+```bash
+ai-commit lang
+```
+
+Supported languages: `en` `de` `es` `fr` `zh` `pt` `ja`
+
 ## How it works
 
 1. Reads your staged diff via `git diff --cached`

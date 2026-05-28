@@ -12,11 +12,13 @@ async function commit() {
   }
 
   let apiKey;
+  let lang = "english";
 
   try {
     const configPath = os.homedir() + "/.ai-commit/config.json";
     const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
     apiKey = config.key;
+    lang = config.language || "english";
   } catch {
     console.log("No API key found. Run 'ai-commit init' first.");
     process.exit(1);
@@ -24,16 +26,18 @@ async function commit() {
 
   const genAI = new GoogleGenerativeAI(apiKey);
 
-    try {
-      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
-      const response = await model.generateContent(
-        `Generate a concise single-line git commit message for this diff, no explanation, just the message, no backticks or special formatting:\n\n${diff}`,
-      );
+  try {
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    const response = await model.generateContent(
+      `Generate a concise single-line git commit message in ${lang} for this diff.
+       The entire message including the conventional commit prefix (feat, fix, etc.) should be in ${lang}.
+       No explanation, just the message, no backticks or special formatting:\n\n${diff}`,
+    );
 
-      console.log(response.response.text());
-    } catch (error) {
-      console.error(error);
-    }
+    console.log(response.response.text());
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 module.exports = { commit };
