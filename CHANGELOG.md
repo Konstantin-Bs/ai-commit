@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.1
+
+- Added loading spinner via ora
+- Migrated to ES modules
+
 ## 1.1.0
 
 - Added multi-language support (en, de, es, fr, zh, pt, ja)
