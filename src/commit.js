@@ -1,5 +1,5 @@
 import { execSync } from "child_process";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 import fs from "fs";
 import os from "os";
 import ora from "ora";
@@ -25,17 +25,17 @@ export async function commit() {
     process.exit(1);
   }
 
-  const genAI = new GoogleGenerativeAI(apiKey);
+  const genAI = new GoogleGenAI({ apiKey: apiKey });
   const spinner = ora("Generating commit message...").start();
 
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
-    const response = await model.generateContent(
-      `Generate a concise single-line git commit message in ${lang} for this diff.
+    const response = await genAI.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: `Generate a concise single-line git commit message in ${lang} for this diff.
        The entire message including the conventional commit prefix (feat, fix, etc.) should be in ${lang}.
        No explanation, just the message, no backticks or special formatting:\n\n${diff}`,
-    );
-    spinner.succeed(response.response.text());
+    });
+    spinner.succeed(response.text);
   } catch (error) {
     spinner.fail("Something went wrong");
     console.error(error);

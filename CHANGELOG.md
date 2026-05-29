@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+- Migrated to @google/genai client library
+
 ## 1.1.1
 
 - Added loading spinner via ora

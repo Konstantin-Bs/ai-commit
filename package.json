@@ -1,6 +1,6 @@
 {
   "name": "@konstantin-bs/ai-git-commit",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
+    "@google/genai": "^2.7.0",
     "ora": "^9.4.0"
   },
   "bin": {
