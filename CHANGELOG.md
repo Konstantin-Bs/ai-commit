@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0
+
+- Added --push to add, commit and push in one command
+
 ## 1.2.1
 
 - Added --help flag to show list of commands

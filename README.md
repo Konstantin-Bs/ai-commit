@@ -55,6 +55,12 @@ To skip the manual step and commit automatically:
 ai-commit --auto
 ```
 
+To add, commit and push in one command:
+
+```bash
+ai-commit --push
+```
+
 To list all existing commands:
 
 ```bash

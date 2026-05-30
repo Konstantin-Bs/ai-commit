@@ -11,6 +11,7 @@ if (process.argv[2] === "--help") {
     Commands:
       ai-commit           generate a commit message
       ai-commit --auto    generate and commit automatically
+      ai-commit --push    git add, commit and push automatically
       ai-commit init      set your Gemini API key
       ai-commit lang      set commit message language
       ai-commit --help    show this help message
@@ -21,6 +22,8 @@ if (process.argv[2] === "--help") {
   lang();
 } else if (process.argv[2] === "--auto") {
   commit("--auto");
+} else if (process.argv[2] === "--push") {
+  commit("--push");
 } else {
   commit("");
 }

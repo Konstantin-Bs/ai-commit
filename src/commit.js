@@ -5,6 +5,9 @@ import os from "os";
 import ora from "ora";
 
 export async function commit(flag) {
+  if (flag === "--push") {
+    execSync("git add .");
+  }
   const diff = execSync("git diff --cached").toString();
 
   if (!diff) {
@@ -36,8 +39,13 @@ export async function commit(flag) {
        No explanation, just the message, no backticks or special formatting:\n\n${diff}`,
     });
     spinner.succeed(response.text);
+    const message = response.text.trim().replace(/"/g, "'");
     if (flag === "--auto") {
-      execSync(`git commit -m "${response.text}"`);
+      execSync(`git commit -m "${message}"`);
+    }
+    if (flag === "--push") {
+      execSync(`git commit -m "${message}"`);
+      execSync("git push");
     }
   } catch (error) {
     spinner.fail("Something went wrong");
