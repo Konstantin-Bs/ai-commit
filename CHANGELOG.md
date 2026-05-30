@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+
+- Added --help flag to show list of commands
+
 ## 1.2.0
 
 - Added --auto flag to enable automatic git commit

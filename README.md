@@ -55,6 +55,12 @@ To skip the manual step and commit automatically:
 ai-commit --auto
 ```
 
+To list all existing commands:
+
+```bash
+ai-commit --help
+```
+
 ## Language
 
 By default commit messages are generated in English. To change the language:
