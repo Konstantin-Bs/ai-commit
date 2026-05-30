@@ -8,6 +8,8 @@ if (process.argv[2] === "init") {
   init();
 } else if (process.argv[2] === "lang") {
   lang();
+} else if (process.argv[2] === "--auto") {
+  commit("--auto");
 } else {
-  commit();
+  commit("");
 }

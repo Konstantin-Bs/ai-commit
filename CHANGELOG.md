@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+
+- Added --auto flag to enable automatic git commit
+
 ## 1.1.2
 
 - Migrated to @google/genai client library

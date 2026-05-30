@@ -43,10 +43,16 @@ git add .
 ai-commit
 ```
 
-The generated message is printed to the terminal. Copy and use it:
+The generated message is printed to the terminal — copy and use it:
 
 ```bash
 git commit -m "your generated message here"
+```
+
+To skip the manual step and commit automatically:
+
+```bash
+ai-commit --auto
 ```
 
 ## Language

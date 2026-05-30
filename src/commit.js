@@ -4,7 +4,7 @@ import fs from "fs";
 import os from "os";
 import ora from "ora";
 
-export async function commit() {
+export async function commit(flag) {
   const diff = execSync("git diff --cached").toString();
 
   if (!diff) {
@@ -36,6 +36,9 @@ export async function commit() {
        No explanation, just the message, no backticks or special formatting:\n\n${diff}`,
     });
     spinner.succeed(response.text);
+    if (flag === "--auto") {
+      execSync(`git commit -m "${response.text}"`);
+    }
   } catch (error) {
     spinner.fail("Something went wrong");
     console.error(error);
